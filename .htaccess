@@ -1,0 +1,15 @@
+Options -Indexes
+
+RewriteEngine On
+
+RewriteBase /Fotaza/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+ 
+RewriteRule ^(.*)$ $1.php
+
+ErrorDocument 404 /Fotaza/view/errores/404.php
+ErrorDocument 500 /Fotaza/view/errores/500.php
+ErrorDocument 403 /Fotaza/view/errores/403.php
+
+AddDefaultCharset utf-8
